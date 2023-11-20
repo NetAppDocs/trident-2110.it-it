@@ -20,7 +20,7 @@ Per eseguire l'aggiornamento utilizzando l'operatore, devono essere soddisfatte 
 * È necessario disporre di un'installazione di Trident basata su CRD. Questo rappresenta tutte le release della versione 19.07 e successive. Se si dispone di un'installazione basata su CSI, è molto probabile che si disponga di un'installazione basata su CRD.
 * Se CSI Trident è stato disinstallato e i metadati dell'installazione persistono, è possibile eseguire l'aggiornamento utilizzando l'operatore.
 * Deve esistere una sola installazione Astra Trident in tutti gli spazi dei nomi di un determinato cluster Kubernetes.
-* Si dovrebbe utilizzare un cluster Kubernetes in esecuzione link:requirements.html["versione 1.17 e successive"^].
+* Si dovrebbe utilizzare un cluster Kubernetes in esecuzione  link:../trident-get-started/requirements.html["versione 1.17 e successive"^].
 * Se sono presenti CRD Alpha Snapshot, rimuoverli con `tridentctl obliviate alpha-snapshot-crd`. In questo modo vengono eliminati i CRD per le specifiche di snapshot alfa. Per gli snapshot esistenti che devono essere cancellati/migrati, vedere https://netapp.io/2020/01/30/alpha-to-beta-snapshots/["questo blog"^].
 
 
@@ -86,7 +86,7 @@ $ kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1
 . Eliminare l'operatore con ambito dello spazio dei nomi utilizzando il relativo manifesto. Per completare questo passaggio, è necessario il `bundle.yaml` file utilizzato per implementare l'operatore con ambito dello spazio dei nomi. È possibile ottenere `bundle.yaml` dal https://github.com/NetApp/trident/blob/stable/v20.10/deploy/bundle.yaml["Repository di Trident"^]. Assicurarsi di utilizzare la filiale appropriata.
 +
 
-NOTE: È necessario apportare le modifiche necessarie ai parametri di installazione di Trident (ad esempio, modificando i valori per `tridentImage`, `autosupportImage`, repository di immagini privato e fornitura `imagePullSecrets`) dopo aver eliminato l'operatore con ambito dello spazio dei nomi e prima di installare l'operatore con ambito del cluster. Per un elenco completo dei parametri che è possibile aggiornare, vedere link:../trident-deploy-k8s/kubernetes-customize-deploy.html["elenco dei parametri"^].
+NOTE: È necessario apportare le modifiche necessarie ai parametri di installazione di Trident (ad esempio, modificando i valori per `tridentImage`, `autosupportImage`, repository di immagini privato e fornitura `imagePullSecrets`) dopo aver eliminato l'operatore con ambito dello spazio dei nomi e prima di installare l'operatore con ambito del cluster. Per un elenco completo dei parametri che è possibile aggiornare, vedere link:../trident-get-started/kubernetes-customize-deploy.html["elenco dei parametri"^].
 
 +
 [listing]
